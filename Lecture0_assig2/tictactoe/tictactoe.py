@@ -39,10 +39,9 @@ def actions(board):
     for i in range(len(board)):
         for j in range(len(board[i])):
             if board[i][j] == EMPTY:
-                possible_actions.add(board((i, j)))
+                possible_actions.add((i, j))
     return possible_actions            
     # raise NotImplementedError
-
 
 def result(board, action):
     """
@@ -85,7 +84,7 @@ def terminal(board):
     Returns True if game is over, False otherwise.
     """
     win = winner(board)
-    if winner is not None:
+    if win is not None:
         return True
 
     for i in range(len(board)):
